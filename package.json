@@ -6,7 +6,10 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint:lint-staged": "lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:pretty": "pretty-quick --staged",
+    "lint:stylelint": "stylelint --fix \"**/*.{tsx,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
+    "lint:all": "npm run lint:eslint && npm run lint:stylelint"
   },
   "dependencies": {
     "vue": "^3.2.25"
@@ -14,6 +17,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
     "@commitlint/config-conventional": "^16.0.0",
+    "@types/node": "^17.0.5",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "@vitejs/plugin-vue": "^2.0.0",
